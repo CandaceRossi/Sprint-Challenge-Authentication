@@ -1,6 +1,6 @@
 const users = require("./users-router.js");
 
-const db = require("../data/dbConfig.js");
+const db = require("../database/dbConfig.js");
 
 const { add } = require("./users-model.js");
 
@@ -26,6 +26,7 @@ describe("users model", function() {
     it("should return the inserted user", async function() {
       let users = await add({ username: "clyde" });
       expect(users.username).toBe("clyde");
+      expect(users.id).toBeDefined();
     });
   });
 });
