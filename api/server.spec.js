@@ -1,6 +1,5 @@
-const request = require("supertest");
-
 const server = require("./server.js");
+const request = require("supertest");
 
 //these are my server tests
 

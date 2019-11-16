@@ -1,8 +1,6 @@
-const users = require("./users-router.js");
-
 const db = require("../database/dbConfig.js");
-
 const { add } = require("./users-model.js");
+const users = require("./users-router.js");
 
 describe("users model", function() {
   describe("add()", function() {
@@ -10,7 +8,7 @@ describe("users model", function() {
       await db("users").truncate();
     });
 
-    it("should add a users", async function() {
+    it("should add a user", async function() {
       await add({ username: "clyde" });
       const users = await db("users");
       expect(users).toHaveLength(1);
